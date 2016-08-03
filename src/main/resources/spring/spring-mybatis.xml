@@ -24,7 +24,6 @@
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	    <property name="dataSource" ref="dataSource" />
-	    <!-- <property name="configLocation" value="classpath:spring/mybatis-config.xml"></property> -->
 	    <property name="mapperLocations" value="classpath:sqlmapper/*-mapping.xml"></property>
 	</bean>
 	
@@ -34,29 +33,8 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
-	<!-- 配置SQLSession模板 -->
-	<!-- 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-	    <constructor-arg index="0" ref="sqlSessionFactory" />
-	</bean> -->
-
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 			<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<!-- 
-	<aop:config >
-		<aop:pointcut expression="execution(public * *..service..*.*(..))" id="serviceMethod"/>
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"/>
-	</aop:config>
-	
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="add*" propagation="REQUIRED"/>
-			<tx:method name="save*" propagation="REQUIRED"/>
-			<tx:method name="update*" propagation="REQUIRED"/>
-			<tx:method name="delete*" propagation="REQUIRED"/>
-			<tx:method name="insert*" propagation="REQUIRED"/>
-		</tx:attributes>
-	</tx:advice>
-	 -->
 </beans>
