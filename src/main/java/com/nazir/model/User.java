@@ -1,6 +1,8 @@
 package com.nazir.model;
 
-public class User {
+import com.nazir.controller.base.AbstractFlagModel;
+
+public class User extends AbstractFlagModel {
 
 	private Long id;
     private String name;

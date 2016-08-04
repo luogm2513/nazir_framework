@@ -28,7 +28,7 @@ public class TestController extends BaseController{
     @Autowired
     private TestService testService;
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public User test(String test) {
         logger.info("logback 成功了");
